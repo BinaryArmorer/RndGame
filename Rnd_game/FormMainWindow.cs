@@ -99,7 +99,7 @@ namespace Rnd_game
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog();
                     openFileDialog.InitialDirectory = "C:\\Users\\Public\\Documents";
-                    openFileDialog.Filter = "Исполнительные файлы (*.exe)|*.exe|Все файлы (*.*)|*.*";
+                    openFileDialog.Filter = "Все файлы (*.*)|*.*|Исполнительные файлы (*.exe)|*.exe|Ссылки на файлы (*.url)|*.url";
                     openFileDialog.Title = "Выберите файл";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -244,21 +244,17 @@ namespace Rnd_game
             }
         }
 
-        private void bt_presetEditor_Click(object sender, EventArgs e)
+        private void FormMainWindow_Load(object sender, EventArgs e)
         {
-            Thread th_open_form;
-            Close();
-            th_open_form = new Thread(open_form);
-            th_open_form.SetApartmentState(ApartmentState.STA);
-            th_open_form.Start();
 
-            void open_form(object obj)
-            {
-                Application.Run(new FormAddGame());
-            }
         }
 
-        private void FormMainWindow_Load(object sender, EventArgs e)
+        private void bt_openFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", ".");
+        }
+
+        private void bt_addGameLink_Click(object sender, EventArgs e)
         {
 
         }

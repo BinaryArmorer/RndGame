@@ -40,7 +40,6 @@
             this.checkListBox_games = new System.Windows.Forms.CheckedListBox();
             this.bt_delElemInList = new System.Windows.Forms.Button();
             this.bt_addPreset = new System.Windows.Forms.Button();
-            this.bt_addGameLink = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_openFolder = new System.Windows.Forms.Button();
@@ -54,12 +53,12 @@
             this.checkBox_closeProgram.Checked = true;
             this.checkBox_closeProgram.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_closeProgram.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_closeProgram.Location = new System.Drawing.Point(175, 525);
+            this.checkBox_closeProgram.Location = new System.Drawing.Point(12, 525);
             this.checkBox_closeProgram.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBox_closeProgram.Name = "checkBox_closeProgram";
-            this.checkBox_closeProgram.Size = new System.Drawing.Size(198, 24);
+            this.checkBox_closeProgram.Size = new System.Drawing.Size(351, 24);
             this.checkBox_closeProgram.TabIndex = 29;
-            this.checkBox_closeProgram.Text = "Закрывать программу";
+            this.checkBox_closeProgram.Text = "Закрывать программу после запуска игры";
             this.checkBox_closeProgram.UseVisualStyleBackColor = true;
             this.checkBox_closeProgram.CheckedChanged += new System.EventHandler(this.checkBox_closeProgram_CheckedChanged);
             // 
@@ -146,7 +145,7 @@
             // bt_addGame
             // 
             this.bt_addGame.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_addGame.Location = new System.Drawing.Point(191, 70);
+            this.bt_addGame.Location = new System.Drawing.Point(354, 70);
             this.bt_addGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_addGame.Name = "bt_addGame";
             this.bt_addGame.Size = new System.Drawing.Size(155, 32);
@@ -194,20 +193,10 @@
             this.bt_addPreset.Text = "Новый пресет";
             this.bt_addPreset.UseVisualStyleBackColor = true;
             // 
-            // bt_addGameLink
-            // 
-            this.bt_addGameLink.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_addGameLink.Location = new System.Drawing.Point(354, 70);
-            this.bt_addGameLink.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bt_addGameLink.Name = "bt_addGameLink";
-            this.bt_addGameLink.Size = new System.Drawing.Size(155, 32);
-            this.bt_addGameLink.TabIndex = 31;
-            this.bt_addGameLink.Text = "Добавить ссылку";
-            this.bt_addGameLink.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.bt_openFolder);
             this.groupBox1.Controls.Add(this.comboBox_presets);
             this.groupBox1.Controls.Add(this.bt_addPreset);
             this.groupBox1.Controls.Add(this.label1);
@@ -224,7 +213,6 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.textBox_gameName);
             this.groupBox2.Controls.Add(this.checkListBox_games);
-            this.groupBox2.Controls.Add(this.bt_addGameLink);
             this.groupBox2.Controls.Add(this.bt_addGame);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.bt_delElemInList);
@@ -239,13 +227,14 @@
             // bt_openFolder
             // 
             this.bt_openFolder.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_openFolder.Location = new System.Drawing.Point(12, 520);
+            this.bt_openFolder.Location = new System.Drawing.Point(181, 67);
             this.bt_openFolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_openFolder.Name = "bt_openFolder";
             this.bt_openFolder.Size = new System.Drawing.Size(155, 32);
             this.bt_openFolder.TabIndex = 32;
-            this.bt_openFolder.Text = "Добавить ссылку";
+            this.bt_openFolder.Text = "Открыть папку";
             this.bt_openFolder.UseVisualStyleBackColor = true;
+            this.bt_openFolder.Click += new System.EventHandler(this.bt_openFolder_Click);
             // 
             // FormMainWindow
             // 
@@ -253,7 +242,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(541, 565);
-            this.Controls.Add(this.bt_openFolder);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox_closeProgram);
@@ -286,7 +274,6 @@
         private System.Windows.Forms.Button bt_runRndGame;
         private System.Windows.Forms.Button bt_addGame;
         private System.Windows.Forms.CheckedListBox checkListBox_games;
-        private System.Windows.Forms.Button bt_addGameLink;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button bt_openFolder;
